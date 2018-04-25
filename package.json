@@ -1,28 +1,25 @@
 {
-  "name": "start",
+  "name": "nyt-react",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lufherna/React-MovieNews.git"
+    "server": "node server.js",
+    "client": "node scripts/start-client.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "build": "node scripts/build.js",
+    "installDeps": "yarn && cd client && yarn"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lufherna/React-MovieNews/issues"
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.12.1"
   },
-  "homepage": "https://github.com/lufherna/React-MovieNews#readme",
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "cheerio": "^1.0.0-rc.2",
-    "express": "^4.15.3",
-    "express-handlebars": "^3.0.0",
-    "mongoose": "^4.11.4",
-    "morgan": "^1.8.2",
-    "request": "^2.81.0"
+    "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.3"
   }
 }
